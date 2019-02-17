@@ -3,7 +3,7 @@ import { MongooseDocument } from 'mongoose';
 import { hooks as hooksData } from './data';
 
 type DocumentMethod = 'init' | 'validate' | 'save' | 'remove';
-type QueryMethod = 'count' | 'find' | 'findOne' | 'findOneAndRemove' | 'findOneAndUpdate' |
+type QueryMethod = 'count' | 'find' | 'findOne' | 'findOneAndRemove' | 'findOneAndUpdate' | 'findOneAndDelete' |
   'update' | 'updateOne' | 'updateMany';
 type ModelMethod = 'insertMany';
 
@@ -32,7 +32,7 @@ type PostSingleWithError<T> = (error: Error, result: TypegooseDoc<T>, next: Hook
 type PostMultipleWithError<T> = (error: Error, result: TypegooseDoc<T>[], net: HookNextFn) => void;
 
 type NumberMethod = 'count';
-type SingleMethod = 'findOne' | 'findOneAndRemove' | 'findOneAndUpdate' | DocumentMethod;
+type SingleMethod = 'findOne' | 'findOneAndRemove' | 'findOneAndUpdate' | 'findOneAndDelete' | DocumentMethod;
 type MultipleMethod = 'find' | 'update';
 
 interface Hooks {
